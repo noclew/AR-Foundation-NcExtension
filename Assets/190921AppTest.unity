@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7126,23 +7126,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1552953712}
     m_Modifications:
-    - target: {fileID: 415417724270828757, guid: 36c0203754f61f34ba66098cd5c71ef6,
-        type: 3}
-      propertyPath: m_Name
-      value: D_ChangeImageMode
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.data[0].m_Text
-      value: SINGLE
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.data[1].m_Text
-      value: INTERPOLATION
-      objectReference: {fileID: 0}
     - target: {fileID: 415417724270828758, guid: 36c0203754f61f34ba66098cd5c71ef6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7248,6 +7231,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 415417724270828757, guid: 36c0203754f61f34ba66098cd5c71ef6,
+        type: 3}
+      propertyPath: m_Name
+      value: D_ChangeImageMode
+      objectReference: {fileID: 0}
     - target: {fileID: 1103555722, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
       propertyPath: m_Name
       value: ImageAlignModeDropdown
@@ -7261,6 +7249,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.024963379
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[0].m_Text
+      value: SINGLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Text
+      value: INTERPOLATION
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
@@ -8484,13 +8484,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261575644}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.3904, y: 0, z: -3.135}
   m_LocalScale: {x: 3.27, y: 1, z: 1.3808}
   m_Children: []
   m_Father: {fileID: 877844001}
   m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1261575646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15017,19 +15017,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1552953712}
     m_Modifications:
-    - target: {fileID: 415417724270828757, guid: 36c0203754f61f34ba66098cd5c71ef6,
-        type: 3}
-      propertyPath: m_Name
-      value: D_ChangeAlign
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: TOUCH
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.data[1].m_Text
-      value: IMAGE-BASED
-      objectReference: {fileID: 0}
     - target: {fileID: 415417724270828758, guid: 36c0203754f61f34ba66098cd5c71ef6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15135,6 +15122,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 415417724270828757, guid: 36c0203754f61f34ba66098cd5c71ef6,
+        type: 3}
+      propertyPath: m_Name
+      value: D_ChangeAlign
+      objectReference: {fileID: 0}
     - target: {fileID: 1103555722, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
       propertyPath: m_Name
       value: AlignModeDropdown
@@ -15148,6 +15140,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.024963379
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[2].m_Text
+      value: TOUCH
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Text
+      value: IMAGE-BASED
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
