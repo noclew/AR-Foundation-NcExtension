@@ -7126,6 +7126,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1552953712}
     m_Modifications:
+    - target: {fileID: 415417724270828757, guid: 36c0203754f61f34ba66098cd5c71ef6,
+        type: 3}
+      propertyPath: m_Name
+      value: D_ChangeImageMode
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[0].m_Text
+      value: SINGLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Text
+      value: INTERPOLATION
+      objectReference: {fileID: 0}
     - target: {fileID: 415417724270828758, guid: 36c0203754f61f34ba66098cd5c71ef6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7231,11 +7248,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 415417724270828757, guid: 36c0203754f61f34ba66098cd5c71ef6,
-        type: 3}
-      propertyPath: m_Name
-      value: D_ChangeImageMode
-      objectReference: {fileID: 0}
     - target: {fileID: 1103555722, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
       propertyPath: m_Name
       value: ImageAlignModeDropdown
@@ -7249,18 +7261,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.024963379
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.data[0].m_Text
-      value: SINGLE
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.data[1].m_Text
-      value: INTERPOLATION
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
@@ -15017,6 +15017,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1552953712}
     m_Modifications:
+    - target: {fileID: 415417724270828757, guid: 36c0203754f61f34ba66098cd5c71ef6,
+        type: 3}
+      propertyPath: m_Name
+      value: D_ChangeAlign
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[2].m_Text
+      value: TOUCH
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Text
+      value: IMAGE-BASED
+      objectReference: {fileID: 0}
     - target: {fileID: 415417724270828758, guid: 36c0203754f61f34ba66098cd5c71ef6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15122,11 +15135,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 415417724270828757, guid: 36c0203754f61f34ba66098cd5c71ef6,
-        type: 3}
-      propertyPath: m_Name
-      value: D_ChangeAlign
-      objectReference: {fileID: 0}
     - target: {fileID: 1103555722, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
       propertyPath: m_Name
       value: AlignModeDropdown
@@ -15140,14 +15148,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.024963379
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: TOUCH
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103555724, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
-      propertyPath: m_Options.m_Options.Array.data[1].m_Text
-      value: IMAGE-BASED
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36c0203754f61f34ba66098cd5c71ef6, type: 3}
@@ -15469,7 +15469,7 @@ PrefabInstance:
     - target: {fileID: 6439790204873359541, guid: 3aeefbbecc64a4d49b00e656ae921e78,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8000049672621306534, guid: 3aeefbbecc64a4d49b00e656ae921e78,
         type: 3}
