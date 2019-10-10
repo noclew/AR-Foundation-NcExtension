@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class NcGameObjectInfo : MonoBehaviour
 {
     // Initial transform parameters in global space

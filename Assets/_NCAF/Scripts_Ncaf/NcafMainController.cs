@@ -14,6 +14,7 @@ namespace NcAF
     using TrackingState = UnityEngine.XR.ARSubsystems.TrackingState;
     public enum AlIGNMODE { MANUAL, IMAGEBASED, TOUCH }
     public enum IMAGEALIGNMODE { SINGLE, INTEPOLATION }
+    public enum VIEWINGMODE { WORLD, LOCAL, WORLDANDLOCAL}
 
     [DisallowMultipleComponent]
     [RequireComponent(typeof(ARReferencePointManager))]
@@ -28,12 +29,7 @@ namespace NcAF
         // singleton stuff
         static NcafMainController _instance;
 
-        // book keeping vars
-        public bool m_isPlaneVisEnabled = true;
-        public bool m_isARImageModelActive = true;
-        public bool m_isRefPointVisEnabled = true;
-        public bool m_isARImageVisEnabled = true;
-
+        
 
 
 
@@ -59,6 +55,13 @@ namespace NcAF
         #endregion
 
         #region publicMemebers
+        // book keeping vars
+        public bool m_isPlaneVisEnabled = true;
+        public bool m_isARImageModelActive = true;
+        public bool m_isRefPointVisEnabled = true;
+        public bool m_isARImageVisEnabled = true;
+        public bool m_isDebugOverlayEnabled = false;
+
         // Main Controller Singleton Instance
         public static NcafMainController Instance { get { return _instance; } }
         public IEnumerator WorldTrackingAlignProcess { get => m_worldTrackingAlignProcess; set => m_worldTrackingAlignProcess = value; }
@@ -73,6 +76,7 @@ namespace NcAF
         [Header("Exhibition Contents")]
         public Camera m_arCam;
         public Transform m_ARImageTargetModels;
+
         // WorldTrackingContents
         public Transform m_WorldTrackingContents;
         public Transform m_LocalTrackingContents;
@@ -81,6 +85,8 @@ namespace NcAF
         // settings for initialization
         public AlIGNMODE m_alignMode;
         public IMAGEALIGNMODE m_imageAlignMode;
+        public float m_minDetectionDistance = 0.1f;
+        public float m_maxDetectionDistance = 10f;
 
         public float m_colinearAngleThreshold = 0.1f;
         public float m_colinearPlaneDistanceThreshol = 3f;
@@ -159,7 +165,8 @@ namespace NcAF
 
             // if the session is tracking, do not dim the screen
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
-
+            processLocalContents();
+            
         }
         private void OnEnable()
         {
@@ -271,7 +278,38 @@ namespace NcAF
 
             return res;
         }
+        public void processLocalContents()
+        {
+            foreach (ARTrackedImage arImg in m_ARImageManager.trackables)
+            {
+                print(arImg.trackingState);
+                List<Transform> localContents = m_ARImageInfoDict[arImg.referenceImage.name].m_localContents;
+                if (localContents.Count == 0) break;
 
+
+                if (arImg.trackingState == TrackingState.Tracking)
+                {
+                    foreach (Transform model in localContents)
+                    {
+                        if (model == null) continue;
+                        MoveModelOnARImage(model, arImg);
+                        model.SetParent(GetComponent<ARSessionOrigin>().trackablesParent);
+                        //NcHelper.ShowObject<Transform>(model);
+                    }
+                }
+
+                else
+                {
+                    foreach (Transform model in localContents)
+                    {
+                        if (model == null) continue;
+                        model.SetParent(m_LocalTrackingContents);
+                        //NcHelper.HideObject<Transform>(model);
+                    }
+                }
+            }
+
+        }
         public void ProcessImageAlignment()
         {
             // if the alignment mode is not set to image-based, return
@@ -301,6 +339,8 @@ namespace NcAF
                 }
             }
 
+            //////////////////////////////local routine
+            ///
             return;
         }
 
@@ -423,37 +463,6 @@ namespace NcAF
         /// <param name="arCam"></param>
         /// <param name="trackedImageDict"></param>
         /// <returns></returns>
-        ARTrackedImage GetClosestARTrackedImageFromCamera(Camera arCam, Dictionary<string, ARTrackedImage> trackedImageDict)
-        {
-            Dictionary<float, ARTrackedImage> debugDict = new Dictionary<float, ARTrackedImage>();
-            m_distToTrackedImage = 999999f;
-            ARTrackedImage closestImage = null;
-            foreach (KeyValuePair<string, ARTrackedImage> item in trackedImageDict)
-            {
-                ARTrackedImage arImage = item.Value;
-                float currentDist = Vector3.Distance(arCam.transform.position, arImage.transform.position);
-                //fordebug
-                debugDict.Add(currentDist, arImage);
-
-                if (arImage.trackingState == TrackingState.Tracking && currentDist < m_distToTrackedImage)
-                {
-                    m_distToTrackedImage = currentDist;
-                    closestImage = arImage;
-                }
-            }
-            if (closestImage == null)
-            {
-                Debug.LogError("ERR>> Error in getting the closest tracked Image although " + trackedImageDict.Count + " images detected");
-                print(m_distToTrackedImage);
-                foreach (KeyValuePair<float, ARTrackedImage> item in debugDict)
-                {
-                    print(item.Key + " " + item.Value.name + " " + item.Value.trackingState);
-                }
-            }
-
-            return closestImage;
-        }
-
         ARTrackedImage GetClosestARTrackedImageFromCamera(Camera arCam, List<ARTrackedImage> trackedImageList)
         {
             Dictionary<float, ARTrackedImage> debugDict = new Dictionary<float, ARTrackedImage>();
@@ -472,17 +481,34 @@ namespace NcAF
                     closestImage = arImage;
                 }
             }
+
             if (closestImage == null)
             {
-                Debug.LogError("ERR>> Error in getting the closest tracked Image although " + trackedImageList.Count + " images detected");
+                Debug.LogError("ERR>> Error in getting the closest tracked Image although " + trackedImageList.Count + " images were detected");
                 print(m_distToTrackedImage);
                 foreach (KeyValuePair<float, ARTrackedImage> item in debugDict)
                 {
                     print(item.Key + " " + item.Value.name + " " + item.Value.trackingState);
                 }
+                return null;
             }
 
-            return closestImage;
+            
+
+            ///////distance checking
+            else if ( m_distToTrackedImage > m_maxDetectionDistance || m_distToTrackedImage < m_minDetectionDistance )
+            {
+                print(m_maxDetectionDistance + "--" + m_minDetectionDistance);
+                Debug.Log("LOG>> " + closestImage.referenceImage.name + " is too far or close from the camera: " + m_distToTrackedImage);
+                return null;
+            }
+
+            else
+            {
+                return closestImage;
+            }
+
+            
         }
 
 
@@ -794,28 +820,7 @@ namespace NcAF
             return NcafMainController.Instance.m_ARImageInfoDict[arImage.referenceImage.name];
         }
 
-        public void TogglePlaneViz()
-        {
-            m_isPlaneVisEnabled = !m_isPlaneVisEnabled;
-            SetARPlaneViz(m_isPlaneVisEnabled);
-        }
-
-        public void ToggleARImageModelActive()
-        {
-            m_isARImageModelActive = !m_isARImageModelActive;
-            SetARImageModelsActive(m_isARImageModelActive);
-        }
-
-        public void ToggleRefPointViz()
-        {
-            m_isRefPointVisEnabled = !m_isRefPointVisEnabled;
-            SetRefPointVis(m_isRefPointVisEnabled);
-        }
-        public void ToggleARImageViz()
-        {
-            m_isARImageVisEnabled = !m_isARImageVisEnabled;
-            SetARImageViz(m_isARImageVisEnabled);
-        }
+       
 
         public void SetARPlaneViz(bool flag)
         {
@@ -841,6 +846,7 @@ namespace NcAF
             m_ARImageTargetModels.gameObject.SetActive(flag);
         }
 
+        ///////////////////////////////////////////////////////////////////////////////////////
         public void SetRefPointVis(bool flag)
         {
             m_isRefPointVisEnabled = flag;
@@ -858,6 +864,47 @@ namespace NcAF
                 img.gameObject.SetActive(flag);
             }
         }
+
+        public void TogglePlaneViz()
+        {
+            m_isPlaneVisEnabled = !m_isPlaneVisEnabled;
+            SetARPlaneViz(m_isPlaneVisEnabled);
+        }
+
+        public void ToggleARImageModelActive()
+        {
+            m_isARImageModelActive = !m_isARImageModelActive;
+            SetARImageModelsActive(m_isARImageModelActive);
+        }
+
+        public void ToggleRefPointViz()
+        {
+            m_isRefPointVisEnabled = !m_isRefPointVisEnabled;
+            SetRefPointVis(m_isRefPointVisEnabled);
+        }
+        public void ToggleARImageViz()
+        {
+            m_isARImageVisEnabled = !m_isARImageVisEnabled;
+            SetARImageViz(m_isARImageVisEnabled);
+        }
+
+        public void ToggleDebugOverlay()
+        {
+            m_isDebugOverlayEnabled = !m_isDebugOverlayEnabled;
+            NcDebugScreen dScreen = GetComponent<NcDebugScreen>();
+            if (dScreen == null)
+            {
+                Debug.LogError("ERR>> Debug screen is not attached to the scene");
+                return;
+            }
+
+            else
+            {
+                dScreen.m_isEnabled = m_isDebugOverlayEnabled;
+            }
+        }
+        ////////////////////////////////////////////////////////////////////////////////
+
 
         public void QuitApplication()
         {
@@ -932,12 +979,12 @@ namespace NcAF
                 if (trackedImage.trackingState == TrackingState.Tracking)
                 {
                     ARImageFullyTracked.Add(trackedImage.referenceImage.name, trackedImage);
-                    NcafMainController.Instance.ShowLocalContents(trackedImage);
+                    //NcafMainController.Instance.ShowLocalContents(trackedImage);
                 }
 
                 else
                 {
-                    NcafMainController.Instance.HideLocalContents(trackedImage);
+                    //NcafMainController.Instance.HideLocalContents(trackedImage);
                 }
 
             }

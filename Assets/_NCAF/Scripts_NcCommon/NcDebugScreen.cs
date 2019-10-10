@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NcAF;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 
 namespace NcCommon
 {
@@ -112,6 +114,8 @@ namespace NcCommon
                 ShowDebugMsg("no alignment interpolation process");
             }
             else ShowDebugMsg(NcafMainController.Instance.WorldTrackingAlignProcess.ToString());
+
+            ShowDebugMsg("Session Tracking Status: " + ARSession.state, null, Color.red);
             ResetDebugScreen();
         }
         public void _ShowDebugMsg(string msg, Color? color = null, GUIStyle style = null)
