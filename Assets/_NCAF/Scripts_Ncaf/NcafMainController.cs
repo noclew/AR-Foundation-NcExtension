@@ -14,7 +14,8 @@ namespace NcAF
     using TrackingState = UnityEngine.XR.ARSubsystems.TrackingState;
     public enum AlIGNMODE { MANUAL, IMAGEBASED, TOUCH }
     public enum IMAGEALIGNMODE { SINGLE, INTEPOLATION }
-    public enum VIEWINGMODE { WORLD, LOCAL, WORLDANDLOCAL}
+    public enum CONTENTSTYPE { ONETOONE, LOCAL, WORLDANDLOCAL, NONE }
+    public enum LOCALALIGNMODE { IMAGEBASED, REFPOINT }
 
     [DisallowMultipleComponent]
     [RequireComponent(typeof(ARReferencePointManager))]
@@ -28,10 +29,6 @@ namespace NcAF
         #region privateMembers
         // singleton stuff
         static NcafMainController _instance;
-
-        
-
-
 
         private Dictionary<string, NcafARImageInfo> m_ARImageInfoDict = new Dictionary<string, NcafARImageInfo>();
         public Dictionary<string, NcafARImageInfo> ARImageInfoDict { get => m_ARImageInfoDict; }
@@ -80,6 +77,9 @@ namespace NcAF
         // WorldTrackingContents
         public Transform m_WorldTrackingContents;
         public Transform m_LocalTrackingContents;
+
+        [Header("Initial Contents Type")]
+        public CONTENTSTYPE m_contentsType;
 
         [Header("Image Realignment Setting")]
         // settings for initialization
@@ -148,6 +148,7 @@ namespace NcAF
         // Update is called once per frame
         private void Update()
         {
+
             if (m_isSanityChecked == false)
             {
                 m_isSanityChecked = true;
@@ -165,8 +166,12 @@ namespace NcAF
 
             // if the session is tracking, do not dim the screen
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
-            processLocalContents();
-            
+
+            if (m_contentsType == CONTENTSTYPE.LOCAL)
+            {
+                processLocalContents();
+            }
+
         }
         private void OnEnable()
         {
@@ -312,6 +317,12 @@ namespace NcAF
         }
         public void ProcessImageAlignment()
         {
+            /////////// fix it later
+            if (m_contentsType == CONTENTSTYPE.LOCAL)
+            {
+                return;
+            }
+
             // if the alignment mode is not set to image-based, return
             if (m_alignMode == AlIGNMODE.MANUAL || m_alignMode == AlIGNMODE.TOUCH) return;
 
@@ -493,10 +504,8 @@ namespace NcAF
                 return null;
             }
 
-            
-
             ///////distance checking
-            else if ( m_distToTrackedImage > m_maxDetectionDistance || m_distToTrackedImage < m_minDetectionDistance )
+            else if (m_distToTrackedImage > m_maxDetectionDistance || m_distToTrackedImage < m_minDetectionDistance)
             {
                 print(m_maxDetectionDistance + "--" + m_minDetectionDistance);
                 Debug.Log("LOG>> " + closestImage.referenceImage.name + " is too far or close from the camera: " + m_distToTrackedImage);
@@ -508,7 +517,7 @@ namespace NcAF
                 return closestImage;
             }
 
-            
+
         }
 
 
@@ -784,6 +793,53 @@ namespace NcAF
         }
 
 
+        ////////////////////////////////////////////////////////////////////////////////// Reset Contents Location
+        /// <summary>
+        /// Reset all the world contents' transform 
+        /// </summary>
+
+
+        public void GoLocal()
+        {
+            ChangeContentsType(CONTENTSTYPE.LOCAL);
+        }
+
+        public void GoWorld()
+        {
+            ChangeContentsType(CONTENTSTYPE.ONETOONE);
+        }
+        public void ChangeContentsType(CONTENTSTYPE contentsType)
+        {
+            m_contentsType = contentsType;
+            ResetWorldTrackingContents();
+            ResetLocalTrackingContetents();
+
+            if (contentsType == CONTENTSTYPE.LOCAL)
+            {
+
+            }
+
+            else if (contentsType == CONTENTSTYPE.ONETOONE)
+            {
+
+            }
+
+            else if (contentsType == CONTENTSTYPE.WORLDANDLOCAL)
+            {
+
+            }
+
+            else if (contentsType == CONTENTSTYPE.NONE)
+            {
+
+            }
+
+            else
+            {
+                return;
+            }
+        }
+
         void ResetWorldTrackingContents()
         {
             m_WorldTrackingContents.GetComponent<NcGameObjectInfo>().ResetParent();
@@ -794,6 +850,9 @@ namespace NcAF
             m_WorldTrackingContents.transform.localScale = (Vector3)originalTrans.localScale;
         }
 
+        /// <summary>
+        /// Reset all the local contents' transform 
+        /// </summary>
         void ResetLocalTrackingContetents()
         {
             if (m_LocalTrackingContents == null)
@@ -803,24 +862,41 @@ namespace NcAF
             }
 
             NcGameObjectInfo[] goInfos = m_LocalTrackingContents.GetComponentsInChildren<NcGameObjectInfo>();
-
-            foreach (NcGameObjectInfo info in goInfos)
+            
+            foreach( KeyValuePair<string, NcafARImageInfo> kvp in m_ARImageInfoDict)
             {
-                info.ResetParent();
+                List<Transform> localTransList = kvp.Value.m_localContents;
 
-                NcTransform originalTrans = info.OriginalTransformData;
-                info.transform.position = originalTrans.position;
-                info.transform.rotation = originalTrans.rotation;
-                info.transform.localScale = (Vector3)originalTrans.localScale;
+                if (localTransList.Count == 0) continue;
+
+                foreach (Transform tr in localTransList)
+                {
+                    NcGameObjectInfo info = tr.GetComponent<NcGameObjectInfo>();
+
+                    if (info == null)
+                    {
+                        Debug.LogError("ERR>>> " + kvp.Key + " does not have nc gameobject info");
+                        continue;
+                    }
+
+                    NcTransform originalTrans = info.OriginalTransformData;
+                    info.transform.position = originalTrans.position;
+                    info.transform.rotation = originalTrans.rotation;
+                    info.transform.localScale = (Vector3)originalTrans.localScale;
+                }
+
+
             }
         }
+        //////////////////////////////////////////////////////////////////////////////////
+
 
         public NcafARImageInfo GetARImageInfo(ARTrackedImage arImage)
         {
             return NcafMainController.Instance.m_ARImageInfoDict[arImage.referenceImage.name];
         }
 
-       
+
 
         public void SetARPlaneViz(bool flag)
         {
@@ -1134,7 +1210,16 @@ namespace NcAF
             m_refImage = null;
         }
     }
+
+    public class AppControl
+    {
+        static NcafMainController controller;
+
+    }
 }
+
+
+
 
 /// https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@3.0/manual/
 /// https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/SupportChecker.cs

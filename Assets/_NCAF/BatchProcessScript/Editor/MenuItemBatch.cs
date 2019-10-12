@@ -8,7 +8,7 @@ using UnityEngine;
 public static class MenuItemBatch
 {
     // json Asset
-    private const string jsonPath = "_ARImages/190921ImageJSon.txt";
+    private const string jsonPath = "_ARImages/191011b_alisp_aalto_arcore.txt";
     private const string containerName = "--ARImageTargetInfo";
 
     // default Material to use for the target visuals

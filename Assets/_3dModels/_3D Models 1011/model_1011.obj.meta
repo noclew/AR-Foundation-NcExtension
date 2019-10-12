@@ -1,0 +1,215 @@
+fileFormatVersion: 2
+guid: 022877e62951374459510975f2cc3c8f
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Livingroom
+    second: {fileID: 2100000, guid: e7210c831535ece47a05bea27a29c511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bbox_b1
+    second: {fileID: 2100000, guid: 8dd81bc88828beb4cba460ff2fc31914, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bbox_c1
+    second: {fileID: 2100000, guid: ae07cad9d444bbc42aae0fca7c88f4be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bbox_c2
+    second: {fileID: 2100000, guid: 35bd3dbd6d9ef944893bfc5d258972b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: box_a1
+    second: {fileID: 2100000, guid: b49b8e99110a51d43b4085004a07730c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: box_a2
+    second: {fileID: 2100000, guid: 1c1d70a1037c07c42ad0f97197fbce6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: box_a3
+    second: {fileID: 2100000, guid: 9ea9b82ab2abf7b478e9e0a54ccf8697, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: box_b3
+    second: {fileID: 2100000, guid: e6bc7fabf44daa6449ac741efd8e8921, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: box_c3
+    second: {fileID: 2100000, guid: 5ac4cf14656000243939610bc4976f40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corridor
+    second: {fileID: 2100000, guid: 47ff15803124e6649866851eb313ef56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: garden1
+    second: {fileID: 2100000, guid: 924708a833929d14d9ce442400a22e9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: garden2
+    second: {fileID: 2100000, guid: 0fa020f3d43cf8946830df2614931f9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: guest
+    second: {fileID: 2100000, guid: ddef10ef6d67e4049a6fd9e9015689e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hall_1
+    second: {fileID: 2100000, guid: ced8ed97cd294d847aa9fd9d0ab60f1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hall_2
+    second: {fileID: 2100000, guid: 1091ffaa47c63224c95cf82719bdbe40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kitchen_maids_room_4_decimated
+    second: {fileID: 2100000, guid: eeee6b33921e6f145bec9bd1da0c2338, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kitchen_maids_room_4_decimated1
+    second: {fileID: 2100000, guid: a46e5fc8ca455c640b56e24c2789b3ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: livingroom_diningroom_with_cieling_2_decimated
+    second: {fileID: 2100000, guid: ee2f2e8a6294ee94db48756c8a6741a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: livingroom_diningroom_with_cieling_2_decimated1
+    second: {fileID: 2100000, guid: 05ac007e57d26f24ea6fcea289d9a93e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: livingroom_diningroom_with_cieling_2_decimated2
+    second: {fileID: 2100000, guid: 14bd20ed5aa0bb740afede7a3f638721, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: room1
+    second: {fileID: 2100000, guid: 24f0452e3792eec44b1bfebc0186ef8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: room2
+    second: {fileID: 2100000, guid: 487d2736730092b40b3ff72efd67376d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shop_2
+    second: {fileID: 2100000, guid: c35f1ef40dd0c284a9c838b23062d568, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: studio_segment
+    second: {fileID: 2100000, guid: 4117e48918f83844e9d88731a7d1b843, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

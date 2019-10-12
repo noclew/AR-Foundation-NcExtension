@@ -1,0 +1,367 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: AppTest1011
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5729041446700868748
+  m_GuidHigh: 12658714438711472044
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5458934295784277748
+      m_GuidHigh: 1625584189728735365
+    m_SerializedTextureGuid:
+      m_GuidLow: 5274979736613781778
+      m_GuidHigh: 13210738407201864762
+    m_Size: {x: 1.2177122, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 000_w1.2177_h0.9000___107714_aerial
+    m_Texture: {fileID: 2800000, guid: 563f81127e1f49343a7ce07d96f855b7, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5294380142183431687
+      m_GuidHigh: 15709475954098069950
+    m_SerializedTextureGuid:
+      m_GuidLow: 4869772413526990030
+      m_GuidHigh: 5722077542176660154
+    m_Size: {x: 1.3235294, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 001_w1.3235_h0.9000___107794
+    m_Texture: {fileID: 2800000, guid: 7d45dccee8354394ba1aae2e35e7684f, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4815099524426103010
+      m_GuidHigh: 15906485528156051120
+    m_SerializedTextureGuid:
+      m_GuidLow: 645334758413510722
+      m_GuidHigh: 5110333876554401818
+    m_Size: {x: 1.2375, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 002_w1.2375_h0.9000___107795
+    m_Texture: {fileID: 2800000, guid: 2c732842b08b08f41a88abc3958deb46, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5572144674919482358
+      m_GuidHigh: 12671943198571928207
+    m_SerializedTextureGuid:
+      m_GuidLow: 6477438334607585160
+      m_GuidHigh: 2638398732262435800
+    m_Size: {x: 1.1083744, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 003_w1.1084_h0.9000___17_106436_2016folder_setA
+    m_Texture: {fileID: 2800000, guid: acc86f887bd859e4d8eb570cab799d24, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5691515792149755763
+      m_GuidHigh: 7026690564625825456
+    m_SerializedTextureGuid:
+      m_GuidLow: 12489735194447425573
+      m_GuidHigh: 6041603865806956570
+    m_Size: {x: 1.92, y: 1.1857952}
+    m_SpecifySize: 1
+    m_Name: 004_w1.9200_h1.1858___20_S52-2_2016folder_hires_setA_crop1200w_aino_window
+    m_Texture: {fileID: 2800000, guid: 63bbb02573fcad541ae80cc7b416d853, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5056615972625655968
+      m_GuidHigh: 5660929354141073334
+    m_SerializedTextureGuid:
+      m_GuidLow: 8314815115187517686
+      m_GuidHigh: 12689459539705004138
+    m_Size: {x: 0.9, y: 1.0230539}
+    m_SpecifySize: 1
+    m_Name: 005_w0.9000_h1.0231___84-003-002
+    m_Texture: {fileID: 2800000, guid: 21ccf8f6284b73646a00cf3f38041ab0, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4986439648466446930
+      m_GuidHigh: 7366674666918430875
+    m_SerializedTextureGuid:
+      m_GuidLow: 6342300625374869720
+      m_GuidHigh: 13980840790311213931
+    m_Size: {x: 0.5875, y: 0.47725308}
+    m_SpecifySize: 1
+    m_Name: 006_w0.5875_h0.4772___84-003-003_elev_street
+    m_Texture: {fileID: 2800000, guid: da34f8d860d058046b9bca07a0ec05c2, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5333654195054591568
+      m_GuidHigh: 3422369168233878438
+    m_SerializedTextureGuid:
+      m_GuidLow: 3635563746985905745
+      m_GuidHigh: 2216480270943683690
+    m_Size: {x: 0.352, y: 0.35552353}
+    m_SpecifySize: 1
+    m_Name: 007_w0.3520_h0.3555___84-003-023_elv_sauna
+    m_Texture: {fileID: 2800000, guid: 41620e511df732746a8442211085c21e, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4647083246083392812
+      m_GuidHigh: 11158146783833417097
+    m_SerializedTextureGuid:
+      m_GuidLow: 9657110382487923601
+      m_GuidHigh: 7447717377780982953
+    m_Size: {x: 0.8919, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 008_w0.8919_h0.9000___84-003-041
+    m_Texture: {fileID: 2800000, guid: 30edeb91f2ba8604a9a423d27e9b5b67, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5495937322374596895
+      m_GuidHigh: 17151486955689483695
+    m_SerializedTextureGuid:
+      m_GuidLow: 7886954476390045827
+      m_GuidHigh: 5942069615899495672
+    m_Size: {x: 0.85581815, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 009_w0.8558_h0.9000___84-003-042
+    m_Texture: {fileID: 2800000, guid: 34e7d883174f6d74f8cc544ed5787652, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4710849110239822571
+      m_GuidHigh: 10471733185829966782
+    m_SerializedTextureGuid:
+      m_GuidLow: 8494974563269107994
+      m_GuidHigh: 14274636234918949947
+    m_Size: {x: 1.177121, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 010_w1.1771_h0.9000___84-003-099_aalto_patio
+    m_Texture: {fileID: 2800000, guid: 63a2611a365b75e43b74438006b219c6, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4694213803150753794
+      m_GuidHigh: 16997072953795888813
+    m_SerializedTextureGuid:
+      m_GuidLow: 12593467300186249167
+      m_GuidHigh: 4503386735395783226
+    m_Size: {x: 0.8844262, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 012_w0.8844_h0.9000___84-003-109__84-76_terrace2f
+    m_Texture: {fileID: 2800000, guid: 561957cffbc9aec43ac27839603e7f3e, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5490078556086601427
+      m_GuidHigh: 12148190938185605028
+    m_SerializedTextureGuid:
+      m_GuidLow: 14845096790442314493
+      m_GuidHigh: 9270009794987096635
+    m_Size: {x: 0.88984007, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 013_w0.8898_h0.9000___84-003-125
+    m_Texture: {fileID: 2800000, guid: d29b0afd60e0ce043bfa983ecbb0a580, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4755390414956928089
+      m_GuidHigh: 17031221012051131300
+    m_SerializedTextureGuid:
+      m_GuidLow: 11593412672711355027
+      m_GuidHigh: 2970714326633796330
+    m_Size: {x: 0.9, y: 0.95869565}
+    m_SpecifySize: 1
+    m_Name: 014_w0.9000_h0.9587___84-003-134_office_marker
+    m_Texture: {fileID: 2800000, guid: bb78ea931366a0e4ead22bc8f0183a29, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4669897953059070472
+      m_GuidHigh: 7473043075766016922
+    m_SerializedTextureGuid:
+      m_GuidLow: 15844915295721077690
+      m_GuidHigh: 747442778162856521
+    m_Size: {x: 1.249336, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 015_w1.2493_h0.9000___84-003-152
+    m_Texture: {fileID: 2800000, guid: f19bbbba7282dbe4490254223f735f0a, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5409718833257848034
+      m_GuidHigh: 10262652442790318259
+    m_SerializedTextureGuid:
+      m_GuidLow: 12286988109055437626
+      m_GuidHigh: 110531838039080761
+    m_Size: {x: 1.2058631, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 016_w1.2059_h0.9000___84-003-158
+    m_Texture: {fileID: 2800000, guid: ffb2ab3a2695aa8439bfb0fe1eb08801, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5539731925611189431
+      m_GuidHigh: 7626180057591961743
+    m_SerializedTextureGuid:
+      m_GuidLow: 4338217386229995324
+      m_GuidHigh: 460432972621873832
+    m_Size: {x: 1.2080119, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 017_w1.2080_h0.9000___84-003-159__84-104_garden_window
+    m_Texture: {fileID: 2800000, guid: 58a9973c71ba3c34a802016059c96306, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5621959112128727806
+      m_GuidHigh: 16600999259882929808
+    m_SerializedTextureGuid:
+      m_GuidLow: 8346296563927778005
+      m_GuidHigh: 5534599247778642875
+    m_Size: {x: 1.2222668, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 018_w1.2223_h0.9000___84-003-160
+    m_Texture: {fileID: 2800000, guid: 1afa82d5008173d4bb7bfd39b1d8ce4c, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5165983160074923666
+      m_GuidHigh: 8078296511785083549
+    m_SerializedTextureGuid:
+      m_GuidLow: 3712099729646913641
+      m_GuidHigh: 3372357617648859720
+    m_Size: {x: 0.49, y: 0.6115983}
+    m_SpecifySize: 1
+    m_Name: 019_w0.4900_h0.6116___84-003-178_lookup_f2patio
+    m_Texture: {fileID: 2800000, guid: 5c6d88690709338448fa8abf6205cd2e, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4712859518951457149
+      m_GuidHigh: 16016217896828743564
+    m_SerializedTextureGuid:
+      m_GuidLow: 4031851744776390921
+      m_GuidHigh: 10115931134497507835
+    m_Size: {x: 1.5, y: 1.533123}
+    m_SpecifySize: 1
+    m_Name: 020_w1.5000_h1.5331___84-003-201
+    m_Texture: {fileID: 2800000, guid: da6f890903cc37f4fbc90934c501638c, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5752621554482425321
+      m_GuidHigh: 9370332599914272662
+    m_SerializedTextureGuid:
+      m_GuidLow: 3536645045237877247
+      m_GuidHigh: 12429944364492772104
+    m_Size: {x: 0.9, y: 1.0080376}
+    m_SpecifySize: 1
+    m_Name: 021_w0.9000_h1.0080___84-003-206_garden_from2f
+    m_Texture: {fileID: 2800000, guid: 420c89ffafee311408d375f78a0880ac, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5421095374797919539
+      m_GuidHigh: 4598180817435651233
+    m_SerializedTextureGuid:
+      m_GuidLow: 8098670259161612823
+      m_GuidHigh: 12799064969924020539
+    m_Size: {x: 0.9016275, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 022_w0.9016_h0.9000___84-003-225
+    m_Texture: {fileID: 2800000, guid: 2e59421741b170643b89771dc7699fb1, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5303659542824706237
+      m_GuidHigh: 7741055877432753027
+    m_SerializedTextureGuid:
+      m_GuidLow: 6779145059854169911
+      m_GuidHigh: 12255189727435039032
+    m_Size: {x: 0.91847014, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 023_w0.9185_h0.9000___84-003-266
+    m_Texture: {fileID: 2800000, guid: b573b7375c835e143821c856202e13aa, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4989357437974722661
+      m_GuidHigh: 12825612392615125134
+    m_SerializedTextureGuid:
+      m_GuidLow: 14156026088983874863
+      m_GuidHigh: 6542120663338337226
+    m_Size: {x: 0.9271186, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 024_w0.9271_h0.9000___84-1169_entrance_closet2
+    m_Texture: {fileID: 2800000, guid: e10bcd2f4eb9c474ca4306e81448ca5a, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5333061877863360359
+      m_GuidHigh: 6276545135874301349
+    m_SerializedTextureGuid:
+      m_GuidLow: 11827636849123949794
+      m_GuidHigh: 14800088948654590873
+    m_Size: {x: 0.31400934, y: 0.302}
+    m_SpecifySize: 1
+    m_Name: 025_w0.3140_h0.3020___84-56a_plan1f_crop302h
+    m_Texture: {fileID: 2800000, guid: 7c5a7ce2350ca42499cbbd0c7c7a64cd, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5517019567107490606
+      m_GuidHigh: 16916868853898240151
+    m_SerializedTextureGuid:
+      m_GuidLow: 8256292718501143520
+      m_GuidHigh: 9059156925803520282
+    m_Size: {x: 0.508, y: 0.61468}
+    m_SpecifySize: 1
+    m_Name: 026_w0.5080_h0.6147___84-62_w600_scale100
+    m_Texture: {fileID: 2800000, guid: d7e7a3e03e7b72941ae109ff3997b87d, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5377160421720554315
+      m_GuidHigh: 13375712431807652514
+    m_SerializedTextureGuid:
+      m_GuidLow: 3527678629027728466
+      m_GuidHigh: 17344156277380748219
+    m_Size: {x: 0.22744122, y: 0.195}
+    m_SpecifySize: 1
+    m_Name: 027_w0.2274_h0.1950___84-72_plan2f_crop195h
+    m_Texture: {fileID: 2800000, guid: ccef4c52d50530f4bb1324b23dd2b2f0, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4933339027066602401
+      m_GuidHigh: 16309374436645196929
+    m_SerializedTextureGuid:
+      m_GuidLow: 4612840626015569357
+      m_GuidHigh: 13965903185628152616
+    m_Size: {x: 1.2572987, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 028_w1.2573_h0.9000___84-78_Riihitie_flipped1
+    m_Texture: {fileID: 2800000, guid: 072605cd1a1c400428c3dceaf3dad0c1, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5384080896851781966
+      m_GuidHigh: 15815070589254575268
+    m_SerializedTextureGuid:
+      m_GuidLow: 17470794032987717722
+      m_GuidHigh: 14307120277883789659
+    m_Size: {x: 0.305, y: 0.42985532}
+    m_SpecifySize: 1
+    m_Name: 029_w0.3050_h0.4299___84-79_elev_maid
+    m_Texture: {fileID: 2800000, guid: d83f405aba9bf2745b210d22171a8dc6, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4957849681201040675
+      m_GuidHigh: 4017840118307495074
+    m_SerializedTextureGuid:
+      m_GuidLow: 7783553749273606129
+      m_GuidHigh: 13156800763370604201
+    m_Size: {x: 0.7859805, y: 1.1209}
+    m_SpecifySize: 1
+    m_Name: 030_w0.7860_h1.1209___84-81_rot_pantry3_corridor_marker
+    m_Texture: {fileID: 2800000, guid: 5b9cf7f1bce56c04a9064b29965896b6, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5171174691371922742
+      m_GuidHigh: 15122519675278359723
+    m_SerializedTextureGuid:
+      m_GuidLow: 1888181595573138518
+      m_GuidHigh: 5913446589802351256
+    m_Size: {x: 0.77, y: 0.7199736}
+    m_SpecifySize: 1
+    m_Name: 031_w0.7700_h0.7200___84-81_rot_pantry4_dining_a_marker
+    m_Texture: {fileID: 2800000, guid: 3b9134562b281a34980a6ab757c81052, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5340761292034357451
+      m_GuidHigh: 13425121065690235040
+    m_SerializedTextureGuid:
+      m_GuidLow: 4887591217053822979
+      m_GuidHigh: 4129263031984521513
+    m_Size: {x: 0.8337694, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 032_w0.8338_h0.9000___84-83
+    m_Texture: {fileID: 2800000, guid: fbcff003365043d42901978dd9164e39, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 4866922149659932656
+      m_GuidHigh: 7850886277726340520
+    m_SerializedTextureGuid:
+      m_GuidLow: 5437217798952328093
+      m_GuidHigh: 7773817381478725529
+    m_Size: {x: 1.5, y: 0.9}
+    m_SpecifySize: 1
+    m_Name: 033_w1.5000_h0.9000___84-84__003-006_kitchen_tn_cabinet2_band2_b_tag
+    m_Texture: {fileID: 2800000, guid: d0fc1b9de0c74b7499f7cb93b825e26b, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5272246126166279057
+      m_GuidHigh: 14173998257573586572
+    m_SerializedTextureGuid:
+      m_GuidLow: 7693370693432172367
+      m_GuidHigh: 16642286901895184105
+    m_Size: {x: 1.9, y: 0.8987745}
+    m_SpecifySize: 1
+    m_Name: 034_w1.9000_h0.8988___84-84__107807_kitchen_tn_counter_facade2_band3_b
+    m_Texture: {fileID: 2800000, guid: 6b6cdf4f57e26ac4e93e993dc347f5e6, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5223502697942748984
+      m_GuidHigh: 6890892205789854636
+    m_SerializedTextureGuid:
+      m_GuidLow: 2581821665406185105
+      m_GuidHigh: 5209468437964980778
+    m_Size: {x: 3.0023, y: 1.3810114}
+    m_SpecifySize: 1
+    m_Name: 035_w3.0023_h1.3810___84-84_kitchen_tn_countertop2
+    m_Texture: {fileID: 2800000, guid: 27f16e91792023d42a028381f1bf4b48, type: 3}
